@@ -1,0 +1,10 @@
+project: savantenvs/slowhttptest
+target: ng_cli
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/ng_cli/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_ng_cli
+    libfuzzer: true
+    timeout: 5

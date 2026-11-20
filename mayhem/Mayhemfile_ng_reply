@@ -1,0 +1,10 @@
+project: savantenvs/slowhttptest
+target: ng_reply
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/ng_reply/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_ng_reply
+    libfuzzer: true
+    timeout: 5

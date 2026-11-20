@@ -1,0 +1,10 @@
+project: savantenvs/slowhttptest
+target: classic_cli
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/classic_cli/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_classic_cli
+    libfuzzer: true
+    timeout: 10

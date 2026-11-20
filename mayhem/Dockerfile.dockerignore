@@ -1,0 +1,14 @@
+# Per-Dockerfile ignore (BuildKit prefers it over the root .dockerignore for
+# `-f mayhem/Dockerfile`). Upstream's root file drops every dotfile, including
+# .git, which the commit image must keep (full history).
+autom4te.cache/
+config.log
+config.status
+stamp-h1
+src/.deps/
+src/*.o
+src/slowhttptest
+ng/build/
+ng/build-*/
+*~
+.DS_Store
